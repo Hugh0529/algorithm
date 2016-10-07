@@ -54,28 +54,5 @@ var addTwoNumbers = function(l1, l2) {
     l2 = l2.next;
   }
 
-  // if (val) {
-  //     node = node = new ListNode(val);
-  //     tail.next = node;
-  //     tail = tail.next;
-  // }
-
   return head;
 };
-
-
-function ListNode(val) {
-    this.val = val;
-    this.next = null;
-}
-var l11 = new ListNode(2);
-var l12 = new ListNode(4);
-var l13 = new ListNode(3);
-l11.next = l12;
-l12.next = l13;
-var l21 = new ListNode(5);
-var l22 = new ListNode(6);
-var l23 = new ListNode(4);
-l21.next = l22;
-l22.next = l23;
-addTwoNumbers(l11, l21);
