@@ -10,7 +10,7 @@
  * @return {number}
  */
 var maxDepth = function(root) {
-  if(root === null){
+  if (root === null) {
     return 0;
   }
 
