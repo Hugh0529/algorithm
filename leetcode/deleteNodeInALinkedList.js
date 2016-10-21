@@ -9,5 +9,6 @@ tion for singly-linked list.
  * @return {void} Do not return anything, modify node in-place instead.
  */
 var deleteNode = function(node) {
-    
+  node.val = noede.next.val;
+  node.next = node.next.next;    
 };
