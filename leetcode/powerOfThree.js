@@ -1,5 +1,4 @@
-/**
- * @param {number} n
+;ram {number} n
  * @return {boolean}
  */
 var isPowerOfThree = function(n) {
@@ -7,20 +6,12 @@ var isPowerOfThree = function(n) {
         return false;
     }
     
-    var sum1 = 0,
-        sum2 = 0;
+    var sum = 0;
     n = n.toString(3);
     
     for (let i = n.length - 1; i >= 0; i--) {
-        switch (n.charAt(i)) {
-           case '1':
-               sum1 += 1;
-               break;
-           case '2':
-               sum2 += 1;
-               break;
-        }
+        sum += Number.parseInt(n.charAt(i));
     }
 
-    return sum1 === 1 && sum2 === 0;
+    return sum === 1;
 };
