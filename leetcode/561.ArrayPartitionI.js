@@ -1,24 +1,29 @@
-/**
- * @param {number[]} nums
+ram {number[]} nums
  * @return {number}
  */
 var arrayPairSum = function(nums) {
-    var compare = function (a,b) {
-        if (a < b) {
-            return -1;
-        } else if (a > b) {
-            return 1;
+    var temp = new Array(20001);
+    for (let i = 0; i < 20001; i++) {
+        temp[i] = 0;
+    }
+    for (let i = nums.length - 1; i >= 0; i--) {
+        temp[nums[i] + 10000] += 1;
+    }
+    var res = 0;
+    var flag = false;
+    for (let i = 0; i < 20001;) {
+        const num = temp[i];
+        if (num > 0 && flag === false) {
+            res = res + i - 10000;
+            flag = true;
+            temp[i] -= 1;
+        } else if (num > 0 && flag === true) {
+            flag = false;
+            temp[i] -= 1;
         } else {
-            return 0;
-        }
-    };
-    nums = nums.sort(compare);
-    var result = 0;
-    for (var i = nums.length - 1; i >= 0; i--) {
-        if (i % 2 === 0) {
-            result += nums[i];
+            i++;
         }
     }
-    return result;
+    return res;
 };
 
