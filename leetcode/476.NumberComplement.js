@@ -1,14 +1,13 @@
-/**
- * @param {number} num
+ram {number} num
  * @return {number}
  */
 var findComplement = function(num) {
-    var s = num.toString(2);
-    var res = '';
-    var length = s.length;
-    for (let i = 0; i < length; i++) {
-        var item = s.charAt(i) === '0' ? '1' : '0';
-        res = res + item;
+    var sum = 0;
+    var i = 0;
+    while (sum < num) {
+        sum += Math.pow(2, i);
+        i++;
     }
-    return parseInt(res, 2);
+    return sum - num;
 };
+
