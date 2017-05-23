@@ -5,16 +5,15 @@
  */
 var twoSum = function(numbers, target) {
     var length = numbers.length;
-    for (let i = 0; i < length; i++) {
-        const item = numbers[i];
-        if (item <= target) {
-            for (let j = i + 1; j < length; j++) {
-                if (item + numbers[j] === target) {
-                    return [i + 1, j + 1];
-                }
-            }
+    var index1 = 0;
+    var index2 = length - 1;
+    while (index1 < index2) {
+        if (numbers[index2] + numbers[index1] > target) {
+            index2--;
+        } else if (numbers[index2] + numbers[index1] < target) {
+            index1++;
         } else {
-           break; 
+            return [index1 + 1, index2 + 1];
         }
     }
     return [];
