@@ -5,10 +5,16 @@
 var findDisappearedNumbers = function(nums) {
     var res = [];
     for (let i = nums.length - 1; i >= 0; i--) {
-        const t = nums[i] - 1;
-        if (t > 0) {
-            nums[i] 
+        const index = Math.abs(nums[i]) - 1;
+        if (nums[index] > 0) {
+            nums[index] = -nums[index];
         }
     }
+    for (let i = nums.length - 1; i >= 0; i--) {
+        if (nums[i] > 0) {
+            res.push(i + 1);
+        }
+    }
+    return res;
 };
 
