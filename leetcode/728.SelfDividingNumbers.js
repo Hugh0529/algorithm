@@ -5,10 +5,13 @@
  */
 var selfDividingNumbers = function(left, right) {
     var isSDN = num => {
-        const str = String(num);
-        for (let c of str) {
-            const digit = Number(c);
-            if (digit === 0 || num % digit !== 0) return false;
+        let cur = num;
+        while (cur !== 0) {
+            const digit = cur % 10;
+            if (digit === 0 || num % digit !== 0) {
+                return false;
+            }
+            cur = parseInt(cur / 10);
         }
         return true;
     };
